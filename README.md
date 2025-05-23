@@ -1,21 +1,44 @@
 # Instacart_Data_Review
 Examination of Instacart data to detect trends of previous customers.  Provided business reccomendations.  
 
-🛒 Instacart Pattern Exploration
-This project explores user shopping patterns in Instacart order data. It uses Python and a Jupyter Notebook to analyze purchase frequency, product preferences, and reorder behavior to uncover insights that could inform recommendation systems and marketing strategies.
+🛒 Instacart Purchase Patterns: From Raw Data to Consumer Insight
+Imagine you’ve just been handed raw transactional logs from a major grocery delivery platform—millions of rows, scattered across departments, aisles, and time. How do you transform this disorganized dataset into business intelligence?
 
-📑 Table of Contents
-About the Project
-Installation
-Usage
-Project Structure
-Technologies Used
-Results & Insights
-Contributing
-License
+This project tackles that challenge using real anonymized data from Instacart. The goal? To clean, explore, and extract patterns that tell a story about how people shop—when they order, what they reorder, and whether they come back at all.
 
-📌 About the Project
-This notebook analyzes customer purchase behavior using a subset of the Instacart dataset. The goal is to identify meaningful patterns in reorder rates, department preferences, and order timing that could help improve user retention and increase basket size (increase profits).
+Through careful data wrangling and exploratory data analysis, this project answers:
+
+Which day and hour are shoppers most active?
+
+What’s the reorder behavior of Instacart users?
+
+Which products dominate shopping carts—and why?
+
+📂 Data Sources
+The analysis integrates five CSV files:
+
+orders.csv – customer order metadata (order time, user ID, etc.)
+
+products.csv – product details (names, departments, aisles)
+
+order_products.csv – product-level purchases per order
+
+aisles.csv – names for grocery aisles
+
+departments.csv – names for grocery departments
+
+### 🧠 Techniques & Industry-Ready Skills Demonstrated
+
+| Category              | Skill/Technique                                                                 |
+|-----------------------|----------------------------------------------------------------------------------|
+| **Data Engineering**  | Merged multiple CSVs using primary/foreign key relationships                     |
+|                       | Cleaned nulls, removed duplicates, normalized casing                            |
+|                       | Converted datatypes for memory-efficient analysis                               |
+| **Exploratory Data Analysis** | Identified order behavior trends by day and hour                        |
+|                       | Analyzed customer churn and reorder patterns                                    |
+|                       | Aggregated top products and visualized purchasing behavior                      |
+| **Communication**     | Derived actionable insights with clear graphical representation                 |
+|                       | Connected raw metrics to real-world customer behavior                          |
 
 🛠 Installation
 Clone this repository or download the .ipynb file.
@@ -57,8 +80,65 @@ NumPy
 Seaborn
 Matplotlib
 
+## 📸 Visual Insights from Instacart Data
+
+### 🕘 Orders by Hour of Day
+![Orders by Hour](instacart_images/image_0.png)
+
+### 📅 Orders by Day of Week
+![Orders by Day](instacart_images/image_1.png)
+
+### ⏳ Days Since Prior Order
+![Days Since Last Order](instacart_images/image_2.png)
+
+### 🔁 Most Frequently Reordered Products
+![Top Reordered Products](instacart_images/image_3.png)
+
+### 🍌 Top 20 Products Ordered
+![Top 20 Products](instacart_images/image_4.png)
+
+### 🛒 Aisle Distribution of Most Ordered Products
+![Aisle Distribution](instacart_images/image_5.png)
+
+### 🧾 Department Distribution of Most Ordered Products
+![Department Distribution](instacart_images/image_6.png)
+
+### 📈 Frequency of Orders per User
+![Orders Per User](instacart_images/image_7.png)
+
+### 🧪 Null Value Distribution by Aisle and Department
+![Missing Product Info](instacart_images/image_8.png)
+
 📊 Results & Insights
-Most common order time was between 10 am and 4 pm.  Most common day to order is Sunday or Monday. Routinely people wait 30 days between reorders. Hypothesize that people who only order groceries once a month are in a higher tax bracket and routine Instacart users. Majority of customers only utilized the service for less than 4 orders. Indication that users took advantage of a special or that the service was not helpful in their lifestyle. Out of the top 20 items ordered, 15 of them are fruit. Certain products like bananas, organic eggs, and milk are reordered at significantly higher rates.Users tend to reorder the same items regularly, making collaborative filtering a viable recommendation strategy.
+### 📊 Summary of Results
+
+| Insight                                  | Result                                                                 |
+|------------------------------------------|------------------------------------------------------------------------|
+| Most active order hours                  | Between 9 AM and 5 PM                                                  |
+| Most common ordering days                | Sunday and Monday                                                      |
+| Most frequent reorder gap                | 30 days                                                                |
+| Highest number of orders per customer    | 1 (suggesting trial users dominate)                                   |
+| Most popular product                     | Bananas (66,050 orders, 50% reorders)                                  |
+| Top reordered category                   | Fresh produce (15 out of top 20 items ordered were fruits or vegetables) |
+| Missing product entries                  | All from `aisle_id=100`, `department_id=21`                            |
+
+
+✅ Conclusion
+This project demonstrates how thoughtful data cleaning and exploratory analysis can transform raw transactional data into clear, actionable insights. By merging five disparate datasets from Instacart and addressing issues such as missing values, duplicates, and inconsistent formatting, we laid a strong foundation for analysis.
+
+Key behavioral patterns emerged:
+
+Ordering activity peaks during weekday business hours, especially on Sundays and Mondays—likely tied to weekly meal planning habits.
+
+Most customers only order once, suggesting strong initial promotions but limited long-term retention.
+
+Reorders reveal customer preferences, with bananas, strawberries, and other fresh produce dominating shopping carts.
+
+Missing product data was isolated to a specific aisle and department, allowing for targeted exclusion or imputation.
+
+The majority of top-selling items were healthy, perishable foods—fruits and vegetables—which speaks to customer priorities and potential supply chain focus areas.
+
+Through this analysis, we showed not only how to prepare and visualize complex datasets but also how to derive meaningful business insights—a critical skill for applied data science roles. Whether improving customer retention strategies or optimizing inventory, this project offers a scalable blueprint for data-driven decision-making in e-commerce and retail analytics.
 
 
 🤝 Contributing
